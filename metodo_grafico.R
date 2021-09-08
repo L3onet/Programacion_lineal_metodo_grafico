@@ -17,48 +17,48 @@
 # Resolución del problema de programación líneal a través del método gráfico
 
 # Paso 1: Identificar las variables básicas
-# ????_1= Cantidad de autos alemanes a ordenarse c/mes 
-# ????_2= Cantidad de autos estadounidenses a ordenarse c/mes
+# x1= Cantidad de autos alemanes a ordenarse c/mes 
+# x2= Cantidad de autos estadounidenses a ordenarse c/mes
 
-# Paso 2: Identificar las variables "????_????"
-# ????_1= $ 150/auto alemán   = Precio (300) - Costo (150)
-# ????_2= $ 220/auto e.u.a.   = Precio (450) - Costo (230)
+# Paso 2: Identificar las variables "cj"
+# c1= $ 150/auto alemán   = Precio (300) - Costo (150)
+# c2= $ 220/auto e.u.a.   = Precio (450) - Costo (230)
 
 # Paso 3: función objetivo
-# Max ???? = ($150/A.A)(????_1A.A.) + ($220/A.E)((????_2A.E.)
-# Max ???? = 150????_1 + 220????_2
+# Maxz= ($150/A.A)(x1A.A.) + ($220/A.E)((x2A.E.)
+# Maxz= 150x1 + 220x2
 
-# Paso 4: Identificar "????_????"
-# ????_1= Capacidad máxima de envío mensual de autos alemanes (100).
-# ????_2= Capacidad máxima de envío mensual de autos e.u.a. (250).
-# ????_3= Tiempo máximo de revisión para el pedido mensual de autos (750)
+# Paso 4: Identificar "bj"
+# b1= Capacidad máxima de envío mensual de autos alemanes (100).
+# b2= Capacidad máxima de envío mensual de autos e.u.a. (250).
+# b3= Tiempo máximo de revisión para el pedido mensual de autos (750)
 
-# Paso 5: Identificar "????_????????"
-# ????_3= Tiempo máximo de revisión para el pedido mensual de autos (750)
+# Paso 5: Identificar "aij"
+# b3= Tiempo máximo de revisión para el pedido mensual de autos (750)
 # * 6 horas de revisión para c/auto alemán
 # * 8 horas de revisión para c/auto estadounidense
 
 # Paso 6: Armar restricciones
-# (6 hrs/A.A.)(????_1A.A.)+(8 hrs/A.E.)(????_2A.E.)
-# 6????_1 + 8????_2 ??? 750
+# (6 hrs/A.A.)(x1A.A.)+(8 hrs/A.E.)(x2A.E.)
+# 6x1 + 8x2 ??? 750
 
 # Cantidad a ordenar de autos alemanes ??? 100 
-# ????_1 ??? 100
+# x1 ??? 100
 
 # Cantidad a ordenar de autos estadounidenses ??? 250 
-# ????_2 ??? 250
+# x2 ??? 250
 
 # Paso 7: No negatividad
-# ????_1, ????_2 ??? 0
+# x1, x2 ??? 0
 
 # Paso 8: Modelo general
-# Max ???? = 150????_1 + 220????_2
+# Maxz= 150x1 + 220x2
 # s.a.
-# 6????_1 + 8????_2 ??? 750  (1)
-# ????_1          ??? 100  (2)
-#         ????_2  ??? 250  (3)
+# 6x1 + 8x2 ??? 750  (1)
+# x1        ??? 100  (2)
+#       x2  ??? 250  (3)
 #
-# ????_1, ????_2 ??? 0
+# x1, x2 ??? 0
 
 # Paso 9 Gráficar el sistema.
 
