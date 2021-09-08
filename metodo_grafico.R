@@ -40,7 +40,7 @@
 
 # Paso 6: Armar restricciones
 # (6 hrs/A.A.)(x1A.A.) + (8 hrs/A.E.)(x2A.E.)
-# 6x1 + 8x2 <= 50
+# 6x1 + 8x2 <= 750
 
 # Cantidad a ordenar de autos alemanes ??? 100 
 # x1 <= 100
