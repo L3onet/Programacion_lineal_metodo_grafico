@@ -17,21 +17,21 @@
 # Resolución del problema de programación líneal a través del método gráfico
 
 # Paso 1: Identificar las variables básicas
-# x1= Cantidad de autos alemanes a ordenarse c/mes 
-# x2= Cantidad de autos estadounidenses a ordenarse c/mes
+# x1 = Cantidad de autos alemanes a ordenarse c/mes 
+# x2 = Cantidad de autos estadounidenses a ordenarse c/mes
 
 # Paso 2: Identificar las variables "cj"
-# c1= $ 150/auto alemán   = Precio (300) - Costo (150)
-# c2= $ 220/auto e.u.a.   = Precio (450) - Costo (230)
+# c1 = $ 150/auto alemán   = Precio (300) - Costo (150)
+# c2 = $ 220/auto e.u.a.   = Precio (450) - Costo (230)
 
 # Paso 3: función objetivo
-# Maxz= ($150/A.A)(x1A.A.) + ($220/A.E)((x2A.E.)
-# Maxz= 150x1 + 220x2
+# Max z = ($150/A.A)(x1A.A.) + ($220/A.E)((x2A.E.)
+# Max z = 150x1 + 220x2
 
 # Paso 4: Identificar "bj"
-# b1= Capacidad máxima de envío mensual de autos alemanes (100).
-# b2= Capacidad máxima de envío mensual de autos e.u.a. (250).
-# b3= Tiempo máximo de revisión para el pedido mensual de autos (750)
+# b1 = Capacidad máxima de envío mensual de autos alemanes (100).
+# b2 = Capacidad máxima de envío mensual de autos e.u.a. (250).
+# b3 = Tiempo máximo de revisión para el pedido mensual de autos (750)
 
 # Paso 5: Identificar "aij"
 # b3= Tiempo máximo de revisión para el pedido mensual de autos (750)
@@ -39,26 +39,26 @@
 # * 8 horas de revisión para c/auto estadounidense
 
 # Paso 6: Armar restricciones
-# (6 hrs/A.A.)(x1A.A.)+(8 hrs/A.E.)(x2A.E.)
-# 6x1 + 8x2 ??? 750
+# (6 hrs/A.A.)(x1A.A.) + (8 hrs/A.E.)(x2A.E.)
+# 6x1 + 8x2 <= 50
 
 # Cantidad a ordenar de autos alemanes ??? 100 
-# x1 ??? 100
+# x1 <= 100
 
 # Cantidad a ordenar de autos estadounidenses ??? 250 
-# x2 ??? 250
+# x2 <= 250
 
 # Paso 7: No negatividad
-# x1, x2 ??? 0
+# x1, x2 >= 0
 
 # Paso 8: Modelo general
-# Maxz= 150x1 + 220x2
+# Max z = 150x1 + 220x2
 # s.a.
-# 6x1 + 8x2 ??? 750  (1)
-# x1        ??? 100  (2)
-#       x2  ??? 250  (3)
+# 6x1 + 8x2 <= 750  (1)
+# x1        <= 100  (2)
+#       x2  <= 250  (3)
 #
-# x1, x2 ??? 0
+# x1, x2 >= 0
 
 # Paso 9 Gráficar el sistema.
 
@@ -67,16 +67,16 @@
 library(matlib)
 
 # Asignar los coeficientes de las restricciones
-# 6????_1 + 8????_2 ??? 750         6   8     (1)
-# ????_1          ??? 100         1   0     (2)
-#         ????_2  ??? 250         0   1     (3)
+# 6x1 + 8x2  <= 750         6   8     (1)
+# x1         <= 100         1   0     (2)
+#         x2 <= 250         0   1     (3)
 # Definir el número de columnas en 2 y el número de filas en 3
 A<-matrix(c(6,1,0,8,0,1), ncol = 2, nrow = 3)
 
 # Asignar los valores del lado derecho de las desiguldades
-# 6????_1 + 8????_2 ??? 750         750       (1)
-# ????_1          ??? 100         100       (2)
-#         ????_2  ??? 250         250       (3)
+# 6x1 + 8x2  <= 750         750       (1)
+# x1         <= 100         100       (2)
+#         x2 <= 250         250       (3)
 b<- c(750,100,250)
 
 # Se grafican las ecuaciones
@@ -100,7 +100,7 @@ plotEqn(A,b, xlim=c(0,140), labels=TRUE)
 # Intersección de la restricción 1 con la recta del eje x2
 # Se resuelve de manera matricial como ;
 # 6x1 + 8x2 = 750
-# x1	  = 0
+# x1	      = 0
 
 # entonces las matrices A y B quedan como:
 # [A=
